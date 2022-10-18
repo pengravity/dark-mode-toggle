@@ -1,10 +1,10 @@
 import './Footer.css';
 
-const Footer = () => {
+const Footer = ({ myTheme }) => {
   return (
-    <div>
-      <h1>Footer</h1>
-    </div>
+    <footer className='--flex-center' data-theme={myTheme}>
+      <p>Copyright &copy; 2022.</p>
+    </footer>
   );
 };
 

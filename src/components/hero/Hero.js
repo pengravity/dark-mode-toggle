@@ -1,9 +1,9 @@
 import './Hero.css';
 import HappyShop from '../../assets/happyShop.jpg';
 
-const Hero = () => {
+const Hero = ({ myTheme }) => {
   return (
-    <section className='hero'>
+    <section className='hero' data-theme={myTheme}>
       <div className='container --grid-15 '>
         <div className='hero-text '>
           <h1>Visit Happy Shop</h1>
