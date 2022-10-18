@@ -2,7 +2,7 @@ import './Header.css';
 import logo from '../../assets/logo.png';
 import { BsFillSunFill, BsFillMoonFill } from 'react-icons/bs';
 
-const Header = ({ myTheme, onToggleTheme }) => {
+const Header = ({ myTheme, onToggleTheme, onSwitch }) => {
   return (
     <header data-theme={myTheme}>
       <div className='container  --flex-between'>
@@ -13,6 +13,8 @@ const Header = ({ myTheme, onToggleTheme }) => {
           <ul className='--flex-between'>
             <li>
               <a href='#'>Home</a>
+            </li>
+            <li>
               <a href='#'>About</a>
             </li>
           </ul>
@@ -21,7 +23,7 @@ const Header = ({ myTheme, onToggleTheme }) => {
           <span className='toggle-btn'>
             <BsFillMoonFill size={30} color='pink' />
             <BsFillSunFill size={30} color='yellow' />
-            <div className='ball'></div>
+            <div className={onSwitch ? 'ball move' : 'ball'}></div>
           </span>
         </div>
       </div>

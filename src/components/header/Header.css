@@ -17,6 +17,7 @@ header::after {
 
 nav a {
   color: var(--foreground);
+  font-size: 30px;
 }
 
 nav li {
@@ -48,4 +49,8 @@ nav li {
   left: 2px;
   border-radius: 50%;
   transition: all 0.2s linear;
+}
+
+.move {
+  transform: translateX(22px);
 }
