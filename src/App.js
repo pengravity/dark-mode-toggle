@@ -6,6 +6,8 @@ import Hero from './components/hero/Hero';
 import Header from './components/header/Header';
 import Footer from './components/footer/Footer';
 
+import ThemeContext from './context/themeContext';
+
 function App() {
   const [theme, setTheme] = useLocalStorage('theme', 'light');
   const [move, setMove] = useState(false);
@@ -23,11 +25,13 @@ function App() {
   }, [theme]);
 
   return (
-    <div className='main'>
-      <Header onToggleTheme={toggleTheme} myTheme={theme} onSwitch={move} />
-      <Hero myTheme={theme} />
-      <Footer myTheme={theme} />
-    </div>
+    <ThemeContext.Provider value={{ toggleTheme, theme, move }}>
+      <div className='main'>
+        <Header />
+        <Hero />
+        <Footer />
+      </div>
+    </ThemeContext.Provider>
   );
 }
 

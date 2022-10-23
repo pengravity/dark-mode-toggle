@@ -1,10 +1,15 @@
+import { useContext } from 'react';
+import ThemeContext from '../../context/themeContext';
+
 import './Header.css';
 import logo from '../../assets/logo.png';
 import { BsFillSunFill, BsFillMoonFill } from 'react-icons/bs';
 
-const Header = ({ myTheme, onToggleTheme, onSwitch }) => {
+const Header = () => {
+  const { toggleTheme, theme, move } = useContext(ThemeContext);
+
   return (
-    <header data-theme={myTheme}>
+    <header data-theme={theme}>
       <div className='container  --flex-between'>
         <div className='logo'>
           <img src={logo} alt='logo' width={100} />
@@ -19,11 +24,11 @@ const Header = ({ myTheme, onToggleTheme, onSwitch }) => {
             </li>
           </ul>
         </nav>
-        <div onClick={onToggleTheme}>
+        <div onClick={toggleTheme}>
           <span className='toggle-btn'>
             <BsFillMoonFill size={30} color='pink' />
             <BsFillSunFill size={30} color='yellow' />
-            <div className={onSwitch ? 'ball move' : 'ball'}></div>
+            <div className={move ? 'ball move' : 'ball'}></div>
           </span>
         </div>
       </div>
